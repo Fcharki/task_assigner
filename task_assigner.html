@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Assignment Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Random Assignment</h1>
+      <p>Assign tasks to people randomly and fairly.</p>
+    </header>
+
+    <div class="card">
+      <label>People — one per line</label>
+      <textarea id="names" placeholder="Person1&#10;Person2&#10;Person3&#10;Person4"></textarea>
+    </div>
+
+    <div class="card">
+      <label>Tasks — one per line</label>
+      <textarea id="parts" placeholder="Task 1&#10;Task 2&#10;Task 3&#10;Task 4&#10;Task 5&#10;Task 6"></textarea>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <label>Parts per person</label>
+        <input type="number" id="perPerson" value="2" min="1" max="20" />
+      </div>
+      <div class="btn-group">
+        <button class="primary" onclick="assign()">Assign randomly</button>
+        <button onclick="reset()">Reset</button>
+      </div>
+      <div id="error" class="error"></div>
+    </div>
+
+    <div class="results-card" id="resultsCard">
+      <div class="results-header">
+        <span>Results</span>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div id="resultsList"></div>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
